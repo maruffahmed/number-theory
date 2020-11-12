@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="container-fluid px-0">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">Number Theory</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/">Caesar</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled"  title="Currently not available">Affine</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main -->
+        <main class="container mt-5">
+
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-encode-tab" data-toggle="pill" href="#pills-encode" role="tab" aria-controls="pills-encode" aria-selected="true">Encode</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-decode-tab" data-toggle="pill" href="#pills-decode" role="tab" aria-controls="pills-decode" aria-selected="false">Decode</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Setting -->
+                <div class="d-flex flex-column align-items-center my-3">
+                    <p>Settings : </p>
+
+                    <div class="row">
+                        <div class="col-4 d-flex align-items-center">Shift(K) : </div>
+                        <div class="col-8">
+                            <input type="number" name="caesarShift" id="caesarShift" class="form-control" value="1">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Encode tab -->
+                
+                <div class="tab-pane fade show active" id="pills-encode" role="tabpanel" aria-labelledby="pills-encode-tab">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-3 md-sm-0">
+                            <label for="caesarEncodePlainText">Plain Text</label>
+                            <textarea class="form-control" name="caesarEncodePlainText" id="caesarEncodePlainText" rows="10"></textarea>
+                        </div>
+                        <div class="col-12 col-sm-6 mb-3 md-sm-0">
+                            <label for="caesarEncodeEncrypted">Encrypted Text</label>
+                            <textarea class="form-control" name="caesarEncodeEncrypted" id="caesarEncodeEncrypted" rows="10" readonly></textarea>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="text-center my-3">
+                        <button class="btn btn-success" id="ceasarEncodeButton">Encode</button>
+                    </div>
+
+                </div>
+
+                <!-- Decode tab -->
+                <div class="tab-pane fade" id="pills-decode" role="tabpanel" aria-labelledby="pills-decode-tab">
+                    <div class="row">
+                        <!-- Encode text -->
+                        <div class="col-12 col-sm-6 mb-3 md-sm-0">
+                            <label for="caesarDecodeEncrypted">Encrypted Text</label>
+                            <textarea class="form-control" name="caesarDecodeEncrypted" id="caesarDecodeEncrypted" rows="10"></textarea>
+                        </div>
+                        <!-- Plan text -->
+                        <div class="col-12 col-sm-6 mb-3 md-sm-0">
+                            <label for="caesarDecodePlainText">Plain Text</label>
+                            <textarea class="form-control" name="caesarDecodePlainText" id="caesarDecodePlainText" rows="10" readonly></textarea>
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="text-center my-3">
+                        <button class="btn btn-success" id="ceasarDecodeButton">Decode</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
