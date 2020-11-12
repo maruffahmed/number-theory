@@ -1,1 +1,1 @@
-## [Demo] (https://number-theory-by-js.hostman.site/)
+## [Demo](https://number-theory-by-js.hostman.site/)
