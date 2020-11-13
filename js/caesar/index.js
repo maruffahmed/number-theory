@@ -27,7 +27,7 @@ class Caesar{
 
     decode(x,text){
         // decode algorithm
-        this.x = Number.parseInt(x);
+        this.x = Number.parseInt(x)%26;
         this.encode = text.toLowerCase();
         let textSplit = this.encode.split("");
         // f(x), from the letter
