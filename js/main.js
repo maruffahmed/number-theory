@@ -62,3 +62,58 @@ affineDecodeButton && (affineDecodeButton.addEventListener("click", function(){
 // let c = new Caesar();
 // let t = c.decode(100000000,'iwnqb');
 // console.log(t)
+
+// let a = new Affine();
+// let t = a.decode(3,8,'ry');
+// console.log(t)
+
+
+// CoPrime check function
+const areCoprimes = (num1, num2) => {
+    const smaller = num1 > num2 ? num1 : num2;
+    for(let ind = 2; ind < smaller; ind++){
+        const condition1 = num1 % ind === 0;
+        const condition2 = num2 % ind === 0;
+        if(condition1 && condition2){
+            return false;
+        };
+    };
+    return true;
+};
+
+// Validating coPrime of 26
+let affineSlope = document.querySelector("#affineSlope");
+let errorMsg = document.querySelector("#error-msg");
+affineSlope.addEventListener('change', function(){
+    let val = this.value;
+    if(val < 1){
+        errorMsg.innerHTML = "Slope must be greater than or equal to 1"
+        affineEncodeButton.disabled = true;
+        affineDecodeButton.disabled = true;
+    }
+    else if(!areCoprimes(val,26)){
+        errorMsg.innerHTML = "Slope should be co-prime of 26"
+        affineEncodeButton.disabled = true;
+        affineDecodeButton.disabled = true;
+    }
+    else{
+        errorMsg.innerHTML = "";
+        affineEncodeButton.disabled = false;
+        affineDecodeButton.disabled = false;
+    }
+})
+
+// validation of intercept
+let affineIntercept = document.querySelector("#affineIntercept");
+affineIntercept.addEventListener('change', function() {
+    let val = this.value;
+    if(val > 9007199254740991){
+        errorMsg.innerHTML = "Intercept value must be less than 9007199254740991";
+        affineEncodeButton.disabled = true;
+        affineDecodeButton.disabled = true;
+    }else{
+        errorMsg.innerHTML = "";
+        affineEncodeButton.disabled = false;
+        affineDecodeButton.disabled = false;
+    }
+})
