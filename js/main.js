@@ -84,7 +84,7 @@ const areCoprimes = (num1, num2) => {
 // Validating coPrime of 26
 let affineSlope = document.querySelector("#affineSlope");
 let errorMsg = document.querySelector("#error-msg");
-affineSlope.addEventListener('change', function(){
+affineSlope && (affineSlope.addEventListener('change', function(){
     let val = this.value;
     if(val < 1){
         errorMsg.innerHTML = "Slope must be greater than or equal to 1"
@@ -101,11 +101,11 @@ affineSlope.addEventListener('change', function(){
         affineEncodeButton.disabled = false;
         affineDecodeButton.disabled = false;
     }
-})
+}))
 
 // validation of intercept
 let affineIntercept = document.querySelector("#affineIntercept");
-affineIntercept.addEventListener('change', function() {
+affineIntercept && (affineIntercept.addEventListener('change', function() {
     let val = this.value;
     if(val > 9007199254740991){
         errorMsg.innerHTML = "Intercept value must be less than 9007199254740991";
@@ -116,4 +116,4 @@ affineIntercept.addEventListener('change', function() {
         affineEncodeButton.disabled = false;
         affineDecodeButton.disabled = false;
     }
-})
+}))
